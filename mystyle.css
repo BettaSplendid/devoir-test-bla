@@ -1,0 +1,111 @@
+.index_background {
+    background-color: rgb(255, 152, 134)
+}
+
+.the_footerman {
+    width: 100%;
+    background-color: #0D2C3B
+}
+
+.the_foot_of_the_footerman {
+    width: 100%;
+    background-color: #092330;
+}
+
+.bar_bar {
+    background-color: rgb(211, 130, 116);
+    overflow: hidden;
+    height: 60px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.bar_bar a {
+    float: right;
+    color: #ca5959;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.bar_bar a:hover {
+    background-color: #ca5959;
+    color: black;
+}
+
+.bar_bar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.titre_petit {
+    line-height: 80%;
+    font-style: italic;
+}
+
+.fit_picture_index {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.fit_picture_legend_index {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20em
+}
+
+.intro {
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 1.2
+}
+
+.background_contact {
+    background-color: #7fab66;
+    background-image: url('scarlet_macaw_circle.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.form_stuff {
+    background-color: rgba(64, 170, 170, 0.877);
+    display: block;
+    margin: 60px;
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    border-style: dotted;
+    margin-right: auto
+}
+
+.form_stuff_pseudo {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: dotted;
+}
+
+.form_stuff_mail {
+    width: 100%;
+}
+
+.form_stuff_sujet {
+    width: 100%;
+}
+
+.form_stuff_test {
+    width: 100%;
+}
+
+.form_stuff_message {
+    width: 100%;
+}
+
+.form_stuff_submit {
+    width: 100%;
+    border-style: dotted;
+}
