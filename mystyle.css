@@ -88,9 +88,10 @@
     line-height: 1.2
 }
 
-.form_container {
+
+/* .form_container {
     background-color: orange;
-}
+} */
 
 .background_contact {
     background-color: #7fab66;
@@ -137,4 +138,12 @@
 .form_stuff_submit {
     width: 100%;
     border-style: dotted;
+}
+
+.register_form_background_pic {
+    background-color: #7fab66;
+    background-image: url('exotic_parrot_cropped.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
