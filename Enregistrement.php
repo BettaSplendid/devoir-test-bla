@@ -38,7 +38,7 @@
                 <br>
 
                 <label for="pseudo"><b>Pseudo :</b></label>
-                <input type="text" placeholder="Pseudo *" name="Pseudo" id="Pseudo" required>
+                <input type="text" placeholder="Pseudo *" name="Pseudo" id="Pseudo">
                 <br>
 
                 <label for="mdp"><b>Mot de Passe :</b></label>

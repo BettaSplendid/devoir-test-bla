@@ -4,23 +4,18 @@
 require_once('connexion.php');
 
 
-//Verification de la variable
-if (!isset($_POST['email']) || !isset($_POST['Pseudo']) | !isset($_POST['mdp'])  | !isset($_POST['mdp-repeat'])) {
-    echo ('Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.');
-
-    // Arrête l'exécution de PHP
-    return;
-}
-
 //Creation des variables php pour traitment
-$mail = $_POST['email'];
-$pseudo = $_POST['Pseudo'];
-$mdp = $_POST['mdp'];
-$mdp_repeated = $_POST['mdp-repeat'];
 
+$mail = strip_tags($_POST['email']);
+$pseudo = strip_tags($_POST['Pseudo']);
+$mdp = strip_tags($_POST['mdp']);
+$mdp_repeated = strip_tags($_POST['mdp-repeat']);
+$error = [
+    "message" => "",
+    "existe" => false
+];
 
 //Debug output to see the inputs avant utilisation
-
 echo  nl2br(" \n");
 echo "mail : ";
 echo $mail;
@@ -36,12 +31,33 @@ echo $mdp_repeated;
 echo  nl2br(" \n");
 echo  nl2br(" \n");
 
-//Verifier validité du mail
 
+//Verification de la variable
+if ((!isset($mail)) || (!isset($pseudo)) || (!isset($mdp))  || (!isset($mdp_repeated))) {
+    echo ('Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.');
+    // Arrête l'exécution de PHP
+    $error["message"] = "Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.";
+    $error["existe"] = true;
+    return $error;
+}
+
+if (empty($mail)||empty($pseudo)||empty($mdp)||empty($mdp_repeated))  {
+    echo '$var vaut soit 0, vide, ou pas définie du tout';
+    echo  nl2br(" \n");
+    $error["message"] = "Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.";
+    $error["existe"] = true;
+    return $error;
+}
+
+
+//Verifier validité du mail
 if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
   echo("$mail is a valid email address");
+  echo  nl2br(" \n");
 } else {
-  echo("$mail is not a valid email address");
+    $error["message"] = "Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.";
+    $error["existe"] = true;
+    return $error;
 }
 
 
@@ -49,10 +65,12 @@ if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 $var1 = $_POST['mdp'];
 $var2 = $_POST['mdp-repeat'];
 if (strcmp($var1, $var2) !== 0) {
-    echo "Veuillez verifier votre mot de passe.";
+    echo "Vos mots de passe ne sont pas identiques. Veuillez verifier.";
 }
 
+
 //USERS CHECK
+
 
 
 //VERIFIER SI IL N'y A PAS DEJA DES UTILISATEURS AVEC PSEUDO OU EMAIL
@@ -65,8 +83,10 @@ if (strcmp($var1, $var2) !== 0) {
 // INSERT USERS AFTER VERIFICATION CHECK
 $insert_request = 'INSERT INTO parrot_users(pseudo, email, mdp) VALUES (:pseudo, :mail, :mdp)';
             
+
 //Prepare
 $insertRecipe = $db->prepare($insert_request);
+
 
 // Exécution ! La recette est maintenant en base de données
 $insertRecipe->execute([
