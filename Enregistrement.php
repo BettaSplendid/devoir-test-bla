@@ -26,7 +26,7 @@
 
         <div class="register_form_background_pic">
             <form action="formstuff.php" method="POST">
-                <div class="container">
+                <div class="the_container">
                     <h1>Créer un compte!</h1>
                     <p>Indiquez vos informations.</p>
                     <hr>
@@ -36,7 +36,7 @@
                     <br>
 
                     <label for="pseudo"><b>Pseudo :</b></label>
-                    <input type="text" placeholder="Pseudo *" name="Pseudo" id="Pseudo">
+                    <input type="text" placeholder="Pseudo *" name="pseudo" id="pseudo">
                     <br>
 
                     <label for="mdp"><b>Mot de Passe :</b></label>

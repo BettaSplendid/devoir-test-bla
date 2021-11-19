@@ -38,7 +38,7 @@
                 <br>
 
                 <label for="pseudo"><b>Pseudo :</b></label>
-                <input type="text" placeholder="Pseudo *" name="Pseudo" id="Pseudo" required>
+                <input type="text" placeholder="Pseudo *" name="pseudo" id="pseudo" required>
                 <br>
 
                 <label for="psw"><b>Mot de Passe :</b></label>

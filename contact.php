@@ -30,11 +30,11 @@
                 <br><br>
                 <form action="formstuff.php" class="form_stuff">
 
-                    <label for="fname">Pseudo :</label>
+                    <label for="fname">pseudo :</label>
                     <input class="form_stuff_pseudo" type="text" id="fname" name="firstname" placeholder="Votre pseudo">
 
                     <label for="mail">Mail:</label>
-                    <input class="form_stuff_pseudo" type="email" id="mail" name="mail" placeholder="Votre mail">
+                    <input class="form_stuff_" type="email" id="mail" name="mail" placeholder="Votre mail">
 
                     <label for="Sujet">Sujet :</label>
                     <input class="form_stuff_pseudo" type="text" id="Sujet" name="Sujet" placeholder="Sujet de votre requête">
