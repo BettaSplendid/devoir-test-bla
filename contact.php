@@ -16,11 +16,11 @@
 <body class="background_contact">
     <div class="background_contact_picture">
         <div class="bar_bar">
-            <a href="contact.html">Contact</a>
-            <a href="comptes.html">Comptes</a>
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="articles.html">Articles</a>
-            <a class="active" href="index.html">Accueil</a>
+            <a href="articles.php">Articles</a>
+            <a class="active" href="index.php">Accueil</a>
         </div>
 
         <div>

@@ -1,4 +1,5 @@
 <?php
+//Honteusement derobé sur internet
 function captchaMath()
 {
 	$n1 = mt_rand(0,10);

@@ -16,28 +16,28 @@
 
 <body class="index_background">
     <div class="bar_bar">
-        <a href="contact.html">Contact</a>
-        <a href="comptes.html">Comptes</a>
+        <a href="contact.php">Contact</a>
+        <a href="comptes.php">Comptes</a>
         <a href="https://cultofthepartyparrot.com/">News</a>
-        <a href="articles.html">Articles</a>
-        <a class="active" href="index.html">Accueil</a>
+        <a href="articles.php">Articles</a>
+        <a class="active" href="index.php">Accueil</a>
     </div>
 
     La page avec les comptes.
 
     <div class="Connexion_compte">
         <br>Vous avez un compte? Cliquer ici:
-        <a href="Connexion.html">blablablaba</a>
+        <a href="Connexion.php">blablablaba</a>
     </div>
 
     <div class="enregistrement_compte">
         <br> Vous voulez vous inscrire? Cliquez ici!
-        <a href="Enregistrement.html">Enregistrement</a>
+        <a href="Enregistrement.php">Enregistrement</a>
 
     </div>
     <div class="Deconnexion">
         <br> Deconnexion
-        <a href="Deconnexion.html">Deconnexion</a>
+        <a href="Deconnexion.php">Deconnexion</a>
     </div>
 </body>
 

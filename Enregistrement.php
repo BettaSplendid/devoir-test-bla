@@ -16,11 +16,11 @@
 <body class="the_container">
     <div class="index_background">
         <div class="bar_bar">
-            <a href="contact.html">Contact</a>
-            <a href="comptes.html">Comptes</a>
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="articles.html">Articles</a>
-            <a class="active" href="index.html">Accueil</a>
+            <a href="articles.php">Articles</a>
+            <a class="active" href="index.php">Accueil</a>
         </div>
 
         <div>
@@ -55,18 +55,18 @@
             </div>
 
             <div class="container signin">
-                <p><a href="Connexion.html">J'ai deja un compte</a>.</p>
+                <p><a href="Connexion.php">J'ai deja un compte</a>.</p>
             </div>
         </form>
 
 
     </div>
     <footer class="the_footerman">
-        <a href="index.html">Accueil</a> -
-        <a href="Articles.html">Articles</a> -
-        <a href="Connexion.html">Connexion</a> -
-        <a href="Enregistrement.html">Creation de Compte</a> -
-        <a href="Deconnexion.html">Deconnexion</a> -
+        <a href="index.php">Accueil</a> -
+        <a href="Articles.php">Articles</a> -
+        <a href="Connexion.php">Connexion</a> -
+        <a href="Enregistrement.php">Creation de Compte</a> -
+        <a href="Deconnexion.php">Deconnexion</a> -
         <div>
             @Mr Con Ure.
         </div>

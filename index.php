@@ -42,11 +42,11 @@ $_SESSION['mdp']
         </header>
 
         <div class="bar_bar">
-            <a href="contact.html">Contact</a>
-            <a href="comptes.html">Comptes</a>
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="articles.html">Articles</a>
-            <a class="active" href="index.html">Accueil</a>
+            <a href="articles.php">Articles</a>
+            <a class="active" href="index.php">Accueil</a>
         </div>
         <img class="fit_picture_index" src="48004636536_a409c3f4a2_b.jpg" width=30%></img>
         <div class="fit_picture_legend_index">
@@ -77,13 +77,13 @@ $_SESSION['mdp']
 <footer>
     <div class="the_footerman">
         Plus de liens :
-        <a href="Articles.html">Articles</a>
+        <a href="Articles.php">Articles</a>
 
-        <a href="Enregistrement.html">Enregistrement</a>
+        <a href="Enregistrement.php">Enregistrement</a>
 
-        <a href="Connexion.html">Connexion</a>
+        <a href="Connexion.php">Connexion</a>
 
-        <a href="Deconnexion.html">Deconnexion</a>
+        <a href="Deconnexion.php">Deconnexion</a>
 
         <a href="https://cultofthepartyparrot.com/">Secret!</a>
     </div>

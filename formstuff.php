@@ -72,11 +72,11 @@ if (strcmp($var1, $var2) !== 0) {
     <div class="index_background">
 
         <div class="bar_bar">
-            <a href="contact.html">Contact</a>
-            <a href="comptes.html">Comptes</a>
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
             <a href="https://cultofthepartyparrot.com/">Articles</a>
-            <a class="active" href="index.html">Accueil</a>
+            <a class="active" href="index.php">Accueil</a>
         </div>
         <div>
             <h5>Rappel de vos informations</h5>
@@ -89,6 +89,9 @@ if (strcmp($var1, $var2) !== 0) {
                             $var1 = $_POST['mdp'];
                             $var2 = $_POST['mdp-repeat'];
                             if (strcmp($var1, $var2) !== 0) {
-                                echo "Verification echouée. Veuillez verifier votre mot de passe.";
-                            } ?></p>
+                                echo "Creation echouée. Veuillez verifier votre mot de passe.";
+                            } else {
+                                echo "Correct";
+                            }
+                            ?></p>
         </div>

@@ -16,11 +16,11 @@
 <body>
     <div class="index_background">
         <div class="bar_bar">
-            <a href="contact.html">Contact</a>
-            <a href="comptes.html">Comptes</a>
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="articles.html">Articles</a>
-            <a class="active" href="index.html">Accueil</a>
+            <a href="articles.php">Articles</a>
+            <a class="active" href="index.php">Accueil</a>
         </div>
 
         <div class="parrot_background">
@@ -56,7 +56,7 @@
             </div>
 
             <div class="container signin">
-                <p><a href="Enregistrement.html">Je n'ai pas de compte</a>.</p>
+                <p><a href="Enregistrement.php">Je n'ai pas de compte</a>.</p>
             </div>
         </form>
     </div>
