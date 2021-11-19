@@ -1,10 +1,10 @@
 <?php
-//Trucs de debug
-echo "Bonjour le monde";
-//Pareil
 
-echo  nl2br(" \n");
+//Ensure connexion  to database
+require_once('connexion.php');
 
+
+//Verification de la variable
 if (!isset($_POST['email']) || !isset($_POST['Pseudo']) | !isset($_POST['mdp'])  | !isset($_POST['mdp-repeat'])) {
     echo ('Il vous faut un mail, pseudo, mdp et une verification correcte pour vous inscrire. Bouuh. Sale nul.');
 
@@ -12,10 +12,14 @@ if (!isset($_POST['email']) || !isset($_POST['Pseudo']) | !isset($_POST['mdp']) 
     return;
 }
 
+//Creation des variables php pour traitment
 $mail = $_POST['email'];
 $pseudo = $_POST['Pseudo'];
 $mdp = $_POST['mdp'];
 $mdp_repeated = $_POST['mdp-repeat'];
+
+
+//Debug output to see the inputs avant utilisation
 
 echo  nl2br(" \n");
 echo "mail : ";
@@ -32,6 +36,15 @@ echo $mdp_repeated;
 echo  nl2br(" \n");
 echo  nl2br(" \n");
 
+//Verifier validité du mail
+
+if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+  echo("$mail is a valid email address");
+} else {
+  echo("$mail is not a valid email address");
+}
+
+
 //Compare les MDP
 $var1 = $_POST['mdp'];
 $var2 = $_POST['mdp-repeat'];
@@ -39,8 +52,33 @@ if (strcmp($var1, $var2) !== 0) {
     echo "Veuillez verifier votre mot de passe.";
 }
 
+//USERS CHECK
+
 
 //VERIFIER SI IL N'y A PAS DEJA DES UTILISATEURS AVEC PSEUDO OU EMAIL
+
+
+
+
+
+
+// INSERT USERS AFTER VERIFICATION CHECK
+$insert_request = 'INSERT INTO parrot_users(pseudo, email, mdp) VALUES (:pseudo, :mail, :mdp)';
+            
+//Prepare
+$insertRecipe = $db->prepare($insert_request);
+
+// Exécution ! La recette est maintenant en base de données
+$insertRecipe->execute([
+    'pseudo' => $pseudo,
+    'mail' => $mail,
+    'mdp' => $mdp,
+]);
+
+
+
+//INSERT INTO parrot_users(pseudo, email, mdp) VALUES (1, 2, 3)
+// INSERT INTO `parrot_users`(`id`, `pseudo`, `email`, `mdp`, `articles_assoc`, `authorisations`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
 
 
 ?>
@@ -59,7 +97,6 @@ if (strcmp($var1, $var2) !== 0) {
     <meta charset="utf-8" />
     <title>Le blogroquet - Enregistrement</title>
     <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
-    </meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
