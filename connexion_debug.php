@@ -49,8 +49,7 @@ require_once('connect_mysql.php');
             $_POST["email"] = $_POST["email"];
             $_POST["pseudo"] = $_POST["pseudo"];
             $_POST["mdp"] = $_POST["mdp"];
-            $_POST["mdp-repeat"] = $_POST["mdp-repeat"];
-            include 'enregistrement_results.php.php';
+            include 'connexion_process.php';
             ?>
         </div>
     </div>

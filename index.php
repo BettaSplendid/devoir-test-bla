@@ -1,19 +1,19 @@
-<!-- 
 
 <?php
 // Cela envoie un cookie persistant qui dure une journée.
 session_start([
     'cookie_lifetime' => 86400,
 ]);
-// $_SESSION['mail'];
-// $_SESSION['pseudo'];
-// $_SESSION['mdp'];
+$_SESSION['mail'];
+$_SESSION['pseudo'];
 $_SESSION['logged_in'] = false;
+$_SESSION['id'];
+$_SESSION['yourCountersNameHere'] = 1;
 
 //Ensure connexion  to database
 require_once('connect_mysql.php');
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">

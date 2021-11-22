@@ -8,17 +8,17 @@ $domaine = "http://localhost";
 $username = "root";
 $password = "";
 $host = "localhost"; //localhost 
-$dtbs = "parrot_blog";
+$dbn = "parrot_blog";
 
 $option = [
-    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ];
 
-$dsn = "mysql:host=$host;dbname=$dtbs;charset=utf8";
+$dsn = "mysql:host=$host;dbname=$dbn;charset=utf8";
 
 try {
-    $dtbs = new \PDO($dsn, $username, $password, $option);
-} catch (\PDOException $error) {
+    $dtbs = new PDO($dsn, $username, $password, $option);
+} catch (PDOException $error) {
     $message = $error->getMessage();
     var_dump($message);
     die("Erreur lors de ma connexion PDO");

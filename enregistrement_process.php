@@ -9,10 +9,15 @@ session_start([
 
 //Ensure connexion  to database
 require_once('connect_mysql.php');
+require_once('debug_helper.php');
+
+$_SESSION['yourCountersNameHere'] = 1;
 
 
 //Creation des variables php pour traitment
 
+
+debug_helper_counters(); //Debug test
 
 $mail = strip_tags($_POST['email']);
 $pseudo = strip_tags($_POST['pseudo']);
@@ -22,6 +27,8 @@ $error = [
     "message" => "",
     "existe" => false
 ];
+
+debug_helper_counters(); //Debug test
 
 function normal_chars($string)
 {
@@ -33,10 +40,15 @@ function normal_chars($string)
     return trim($string, ' -');
 }
 
+debug_helper_counters(); //Debug test
+
+
 $mail = normal_chars($mail);
 $pseudo = normal_chars($pseudo);
 $mdp = normal_chars($mdp);
 $mdp_repeated = normal_chars($mdp_repeated);
+
+debug_helper_counters(); //Debug test
 
 //Debug output to see the inputs avant utilisation
 echo  nl2br(" \n");
@@ -61,15 +73,17 @@ if ((!isset($mail)) || (!isset($pseudo)) || (!isset($mdp))  || (!isset($mdp_repe
     return $error;
 }
 
+debug_helper_counters(); //Debug test
+
 if (empty($mail) || empty($pseudo) || empty($mdp) || empty($mdp_repeated)) {
-    echo '$var vaut soit 0, vide, ou pas définie du tout';
+    echo "$mail vaut soit 0, vide, ou pas définie du tout";
     echo  nl2br(" \n");
     $error["message"] = "vaut soit 0, vide, ou pas définie du tout";
     $error["existe"] = true;
     return $error;
 }
 
-
+debug_helper_counters(); //Debug test
 
 //Verifier validité du mail
 function mail_validity_ver()
@@ -86,6 +100,8 @@ function mail_validity_ver()
     }
 }
 
+debug_helper_counters(); //Debug test
+
 mail_validity_ver();
 
 //Compare les MDP
@@ -99,27 +115,25 @@ if (strcmp($var1, $var2) !== 0) {
     echo  nl2br(" \n");
 }
 
-
+debug_helper_counters(); //Debug test
 
 //VERIFIER SI IL N'y A PAS DEJA DES UTILISATEURS AVEC PSEUDO OU EMAIL
-
-
 
 function ze_inserto()
 {
     global $pseudo;
     global $mail;
     global $mdp;
-    global $db;
+    global $dtbs;
     // INSERT USERS AFTER VERIFICATION CHECK
     $insert_request = 'INSERT INTO parrot_users(pseudo, email, mdp) VALUES (:pseudo, :mail, :mdp)';
 
     //Prepare
-    $insertRecipe = $db->prepare($insert_request);
+    $insertusers = $dtbs->prepare($insert_request);
 
 
     // Exécution !
-    $insertRecipe->execute([
+    $insertusers->execute([
         'pseudo' => $pseudo,
         'mail' => $mail,
         'mdp' => $mdp,
@@ -129,13 +143,39 @@ function ze_inserto()
     echo  nl2br(" \n");
 }
 
-// ze_inserto();
+ze_inserto();
 
+debug_helper_counters(); //Debug test
 
-$sth = $db->prepare("SELECT mdp FROM parrot_users");
-$sth->execute();
+// CETTE FONCTION MARCHE. 
+function search_db()
+{
+    global $dtbs;
+    global $pseudo;
 
-/* Récupère la première colonne depuis la première ligne d'un jeu de résultats */
-print("Récupère la première colonne depuis la première ligne d'un jeu de résultats :\n");
-$result = $sth->fetchColumn();
-echo array_search($mdp, $result);
+    var_dump($pseudo);
+
+    $search_request = 'SELECT * FROM `parrot_users` WHERE `pseudo` = $pseudo';
+
+    var_dump($pseudo);
+
+    $prepare__search = $dtbs->prepare($search_request);
+
+    $prepare__search->bind_param("sss", $type , $name, $description);
+
+    $prepare__search->execute(); // run the statement
+
+    $resultat_array = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative array
+    var_dump($resultat_array);
+
+    if (empty($resultat_array)) {
+        echo "value found";
+    } else {
+        echo "value not found";
+    }
+    echo 'Fin';
+}
+
+search_db();
+
+debug_helper_counters(); //Debug test

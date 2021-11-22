@@ -41,7 +41,7 @@ require_once('connect_mysql.php');
         </div>
 
         <div class="register_form_background_pic">
-            <form action="debug_formstuff.php" method="POST">
+            <form action="enregistrement_debug.php" method="POST">
                 <div class="the_container">
                     <h1>Créer un compte!</h1>
                     <p>Indiquez vos informations.</p>

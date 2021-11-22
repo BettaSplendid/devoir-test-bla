@@ -3,9 +3,6 @@
 session_start([
     'cookie_lifetime' => 86400,
 ]);
-// $_SESSION['mail'];
-// $_SESSION['pseudo'];
-// $_SESSION['mdp'];
 
 //Ensure connexion  to database
 require_once('connect_mysql.php');
@@ -44,7 +41,17 @@ require_once('connect_mysql.php');
             </img>
         </div>
 
-        <form action="connexion_results.php" method="post">
+        <?php
+
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            echo "Welcome to the member's area, " . $_SESSION['pseudo'] . "!";
+            //include 'blablabal.php';
+        } else {
+            echo "Please log in first to see this page.";
+        }
+        ?>
+
+        <form action="connexion_debug.php" method="post">
             <div class="container_main">
                 <h1>Vos identifiants : </h1>
                 <hr>
