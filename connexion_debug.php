@@ -50,7 +50,7 @@ require_once('connect_mysql.php');
             $_POST["pseudo"] = $_POST["pseudo"];
             $_POST["mdp"] = $_POST["mdp"];
             $_POST["mdp-repeat"] = $_POST["mdp-repeat"];
-            include 'signup_results.php';
+            include 'enregistrement_results.php.php';
             ?>
         </div>
     </div>

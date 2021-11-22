@@ -10,7 +10,7 @@ session_start([
 //Ensure connexion  to database
 require_once('connect_mysql.php');
 
-?> -->
+?>
 
 
 <!DOCTYPE html>
@@ -19,7 +19,8 @@ require_once('connect_mysql.php');
 <head>
     <meta charset="utf-8" />
     <title>Le blogroquet - Connexion</title>
-    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire."></meta>
+    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
+    </meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
@@ -28,7 +29,7 @@ require_once('connect_mysql.php');
 
 </head>
 
-<body>
+<body class="the_container">
     <div class="index_background">
         <div class="bar_bar">
             <a href="contact.php">Contact</a>
@@ -43,21 +44,21 @@ require_once('connect_mysql.php');
             </img>
         </div>
 
-        <form action="action_page.php" style="background-color:greenyellow;">
-            <div class="container">
+        <form action="connexion_results.php" method="post">
+            <div class="container_main">
                 <h1>Vos identifiants : </h1>
                 <hr>
 
                 <label for="email"><b>Mail :</b></label>
-                <input type="text" placeholder="Email *" name="email" id="email" required>
+                <input type="text" placeholder="Email *" name="email" id="email">
                 <br>
 
                 <label for="pseudo"><b>Pseudo :</b></label>
-                <input type="text" placeholder="Pseudo *" name="pseudo" id="pseudo" required>
+                <input type="text" placeholder="Pseudo *" name="pseudo" id="pseudo">
                 <br>
 
-                <label for="psw"><b>Mot de Passe :</b></label>
-                <input type="password" placeholder="Mot de Passe *" name="psw" id="psw" required>
+                <label for="mdp"><b>Mot de Passe :</b></label>
+                <input type="password" placeholder="Mot de Passe *" name="mdp" id="mdp">
                 <br>
 
                 <br>
@@ -67,11 +68,13 @@ require_once('connect_mysql.php');
                 <hr>
 
 
-                <button type="submit" class="registerbtn"><h2>Se connecter</h2></button>
+                <button type="submit" class="registerbtn">
+                    <h2>Se connecter</h2>
+                </button>
             </div>
 
-            <div class="container signin">
-                <p><a href="Enregistrement.php">Je n'ai pas de compte</a>.</p>
+            <div class="container_signin">
+                <p><a href="enregistrement.php">Je n'ai pas de compte</a>.</p>
             </div>
         </form>
     </div>

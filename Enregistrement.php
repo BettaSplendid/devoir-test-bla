@@ -20,9 +20,8 @@ require_once('connect_mysql.php');
 
 <head>
     <meta charset="utf-8" />
-    <title>Le blogroquet - Enregistrement</title>
-    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
-    </meta>
+    <title>Le blogroquet - Connexion</title>
+    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire."></meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
@@ -42,7 +41,7 @@ require_once('connect_mysql.php');
         </div>
 
         <div class="register_form_background_pic">
-            <form action="formstuff.php" method="POST">
+            <form action="debug_formstuff.php" method="POST">
                 <div class="the_container">
                     <h1>Créer un compte!</h1>
                     <p>Indiquez vos informations.</p>
@@ -61,7 +60,7 @@ require_once('connect_mysql.php');
                     <br>
 
                     <label for="mdp-repeat"><b>Verification Mot de Passe :</b></label>
-                    <input type="password" placeholder="Confirmer votre Mot de Passe *" name="mdp-repeat" id="mdp-repeat" required>
+                    <input type="password" placeholder="Confirmer votre Mot de Passe *" name="mdp-repeat" id="mdp-repeat">
                     <br>
                     <hr>
 
@@ -72,7 +71,7 @@ require_once('connect_mysql.php');
                 </div>
 
                 <div class="container signin">
-                    <p><a href="Connexion.php">J'ai deja un compte</a>.</p>
+                    <p><a href="connexion.php">J'ai deja un compte</a>.</p>
                 </div>
             </form>
         </div>
@@ -81,8 +80,8 @@ require_once('connect_mysql.php');
     <footer class="the_footerman">
         <a href="index.php">Accueil</a> -
         <a href="Articles.php">Articles</a> -
-        <a href="Connexion.php">Connexion</a> -
-        <a href="Enregistrement.php">Creation de Compte</a> -
+        <a href="connexion.php">Connexion</a> -
+        <a href="enregistrement.php">Creation de Compte</a> -
         <a href="Deconnexion.php">Deconnexion</a> -
         <div>
             @Mr Con Ure.

@@ -104,6 +104,18 @@
     word-break: break-word;
 }
 
+.container_main {
+    background-color: turquoise;
+    padding: 5px;
+    border: solid;
+}
+
+.container_signin {
+    background-color: turquoise;
+    padding: 5px;
+    border: solid;
+}
+
 .background_contact {
     background-color: #7fab66;
     background-image: url('scarlet_macaw_circle.png');

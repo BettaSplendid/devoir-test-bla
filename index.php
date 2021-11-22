@@ -83,9 +83,9 @@ require_once('connect_mysql.php');
         Plus de liens :
         <a href="Articles.php">Articles</a>
 
-        <a href="Enregistrement.php">Enregistrement</a>
+        <a href="enregistrement.php">Enregistrement</a>
 
-        <a href="Connexion.php">Connexion</a>
+        <a href="connexion.php">Connexion</a>
 
         <a href="Deconnexion.php">Deconnexion</a>
 

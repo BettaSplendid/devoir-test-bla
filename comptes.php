@@ -42,12 +42,12 @@ require_once('connect_mysql.php');
 
     <div class="Connexion_compte">
         <br>Vous avez un compte? Cliquer ici:
-        <a href="Connexion.php">blablablaba</a>
+        <a href="connexion.php">blablablaba</a>
     </div>
 
     <div class="enregistrement_compte">
         <br> Vous voulez vous inscrire? Cliquez ici!
-        <a href="Enregistrement.php">Enregistrement</a>
+        <a href="enregistrement.php">Enregistrement</a>
 
     </div>
     <div class="Deconnexion">
