@@ -10,7 +10,11 @@ session_start([
 ]);
 // $_SESSION['mail'];
 // $_SESSION['pseudo'];
-// $_SESSION['mdp'];
+// $_SESSION['mdp'];7
+
+//Ensure connexion  to database
+require_once('connect_mysql.php');
+
 ?>
 
 

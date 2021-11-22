@@ -8,6 +8,9 @@ session_start([
 // $_SESSION['pseudo'];
 // $_SESSION['mdp'];
 
+//Ensure connexion  to database
+require_once('connect_mysql.php');
+
 
 //Honteusement derobé sur internet
 function captchaMath()

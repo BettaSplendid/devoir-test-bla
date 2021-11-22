@@ -8,7 +8,7 @@ session_start([
 // $_SESSION['mdp'];
 
 //Ensure connexion  to database
-require_once('connexion.php');
+require_once('connect_mysql.php');
 
 
 //Creation des variables php pour traitment

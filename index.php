@@ -8,7 +8,10 @@ session_start([
 // $_SESSION['mail'];
 // $_SESSION['pseudo'];
 // $_SESSION['mdp'];
+$_SESSION['logged_in'] = false;
 
+//Ensure connexion  to database
+require_once('connect_mysql.php');
 
 ?> -->
 
@@ -18,7 +21,8 @@ session_start([
 <head>
     <meta charset="utf-8" />
     <title>Le blogroquet</title>
-    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire."></meta>
+    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
+    </meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
