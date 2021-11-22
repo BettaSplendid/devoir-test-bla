@@ -1,4 +1,11 @@
 <?php
+// Cela envoie un cookie persistant qui dure une journée.
+session_start([
+    'cookie_lifetime' => 86400,
+]);
+// $_SESSION['mail'];
+// $_SESSION['pseudo'];
+// $_SESSION['mdp'];
 
 //Ensure connexion  to database
 require_once('connexion.php');
@@ -111,7 +118,7 @@ function ze_inserto()
     $insertRecipe = $db->prepare($insert_request);
 
 
-    // Exécution ! La recette est maintenant en base de données
+    // Exécution !
     $insertRecipe->execute([
         'pseudo' => $pseudo,
         'mail' => $mail,

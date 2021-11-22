@@ -5,9 +5,9 @@
 session_start([
     'cookie_lifetime' => 86400,
 ]);
-$_SESSION['mail'];
-$_SESSION['pseudo'];
-$_SESSION['mdp'];
+// $_SESSION['mail'];
+// $_SESSION['pseudo'];
+// $_SESSION['mdp'];
 
 
 ?> -->

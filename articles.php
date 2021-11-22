@@ -1,3 +1,14 @@
+
+<?php
+// Cela envoie un cookie persistant qui dure une journée.
+session_start([
+    'cookie_lifetime' => 86400,
+]);
+// $_SESSION['mail'];
+// $_SESSION['pseudo'];
+// $_SESSION['mdp'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
