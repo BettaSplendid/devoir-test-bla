@@ -3,17 +3,10 @@
 //Ensure connexion  to database
 require_once('connect_mysql.php');
 
-$_SESSION['loggedin'] = true;
-echo "Session set as true.";
-
 //Creation des variables php pour traitment
 $mail = strip_tags($_POST['email']);
-$pseudo = strip_tags($_POST['pseudo']);
 $mdp = strip_tags($_POST['mdp']);
-$error = [
-    "message" => "",
-    "existe" => false
-];
+
 
 function normal_chars($string)
 {
@@ -27,30 +20,75 @@ function normal_chars($string)
 
 
 $mail = normal_chars($mail);
-$pseudo = normal_chars($pseudo);
 $mdp = normal_chars($mdp);
 
 
-function ze_inserto()
+function search_db_for_account()
 {
-    global $pseudo;
-    global $mail;
-    global $mdp;
     global $dtbs;
-    // INSERT USERS AFTER VERIFICATION CHECK
-    $insert_request = 'INSERT INTO parrot_users(pseudo, email, mdp) VALUES (:pseudo, :mail, :mdp)';
+    global $mail;
 
-    //Prepare
-    $insertRecipe = $dtbs->prepare($insert_request);
+    $search_request = 'SELECT * FROM `parrot_users` WHERE email = :email';
+    $prepare__search = $dtbs->prepare($search_request);
+    $prepare__search->execute(["email" => $mail]); // run the statement
+    $resultat_array = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative array
 
+    var_dump($resultat_array);
 
-    // Exécution !
-    $insertRecipe->execute([
-        'pseudo' => $pseudo,
-        'mail' => $mail,
-        'mdp' => $mdp,
-    ]);
-
-    echo "Insertion reussi.";
-    echo  nl2br(" \n");
+    if ($resultat_array) {
+        echo "We found your mail bb <br />";
+        return 1;
+    } else {
+        echo "Can't find a matching email <br />";
+        return 0;
+    }
+    // Not supposed to happen but just in case
+    echo "Error, test failed. <br />";
+    return;
 }
+
+//        $_SESSION['loggedin'] = true;
+
+function compare_password()
+{
+    global $dtbs;
+    global $mdp;
+
+    $search_request = 'SELECT * FROM `parrot_users` WHERE mdp = :mdp';
+    $prepare__search = $dtbs->prepare($search_request);
+    $prepare__search->execute(["mdp" => $mdp]); // run the statement
+    $resultat_array = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative array
+
+
+    $placeholder_variable2 = $resultat_array[0]["mdp"];
+    var_dump($resultat_array);
+
+    var_dump($placeholder_variable2);
+
+    if ($placeholder_variable2 == $mdp) {
+        echo "Ca marcheeee! Le mot de passe fourni $placeholder_variable2 est egal au mot de passe récupéré $mdp !";
+        return 1;
+    } else {
+        echo "ca marche poooo";
+        return 0;
+    }
+}
+
+
+function connect_to_website()
+{
+    global $error_stuff;
+
+    if (!search_db_for_account()) {
+        return;
+    }
+    if (!compare_password()) {
+        return;
+    }
+
+    $_SESSION['loggedin'] = true;
+    echo $_SESSION['loggedin'];
+    echo "Successfully logged in";
+}
+
+connect_to_website();

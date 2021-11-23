@@ -1,7 +1,7 @@
 <?php
 
-//require_once("../config/config.php");
-//Pas besoin pour le moment.
+require_once("config.php");
+
 
 //CONNEXION BDD
 $domaine = "http://localhost";
@@ -32,7 +32,8 @@ echo "Connected successfully with variables method";
 
 
 
-// Connexion en dure ancienne. Elle marche mais elle est pas belle donc je la commente.
+// // Connexion en dure ancienne. Elle marche mais elle est pas belle donc je la commente.
+// // Elle est aussi moins flexible que l'autre.
 // try {
 //     $dtbs = new PDO('mysql:host=localhost;dbname=parrot_blog;charset=utf8', 'root');
 // } catch (Exception $e) {

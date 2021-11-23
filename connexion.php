@@ -1,8 +1,4 @@
 <?php
-// Cela envoie un cookie persistant qui dure une journée.
-session_start([
-    'cookie_lifetime' => 86400,
-]);
 
 //Ensure connexion  to database
 require_once('connect_mysql.php');
@@ -37,8 +33,7 @@ require_once('connect_mysql.php');
         </div>
 
         <div class="parrot_background">
-            <img class="fit-picture" src="exotic parrot cropped.png" width=30%>Parrot background
-            </img>
+            <img class="fit-picture" src="exotic parrot cropped.png" width=30%>
         </div>
 
         <?php
@@ -58,10 +53,6 @@ require_once('connect_mysql.php');
 
                 <label for="email"><b>Mail :</b></label>
                 <input type="text" placeholder="Email *" name="email" id="email">
-                <br>
-
-                <label for="pseudo"><b>Pseudo :</b></label>
-                <input type="text" placeholder="Pseudo *" name="pseudo" id="pseudo">
                 <br>
 
                 <label for="mdp"><b>Mot de Passe :</b></label>
@@ -87,6 +78,6 @@ require_once('connect_mysql.php');
     </div>
 </body>
 
-<footer>
+<footer class="the_footerman">
     <p><em> <small>@Mr Con Ure.</small></em></p>
 </footer>

@@ -1,11 +1,4 @@
 <?php
-// Cela envoie un cookie persistant qui dure une journée.
-session_start([
-    'cookie_lifetime' => 86400,
-]);
-// $_SESSION['mail'];
-// $_SESSION['pseudo'];
-// $_SESSION['mdp'];
 
 //Ensure connexion  to database
 require_once('connect_mysql.php');
@@ -19,7 +12,8 @@ require_once('connect_mysql.php');
 <head>
     <meta charset="utf-8" />
     <title>Le blogroquet</title>
-    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire."></meta>
+    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
+    </meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
