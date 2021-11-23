@@ -1,6 +1,6 @@
 <?php
 //Ensure connexion  to database
-require_once('connect_mysql.php');
+require_once('config/config.php');
 require_once('debug_helper.php');
 
 $_SESSION['yourCountersNameHere'] = 1;

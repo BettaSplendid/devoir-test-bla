@@ -1,5 +1,6 @@
 <?php
 
+//Est-ce que j'en ai vraiment besoin
 require_once("config.php");
 
 

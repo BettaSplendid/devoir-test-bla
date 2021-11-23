@@ -1,8 +1,10 @@
 <?php
 
 //Ensure connexion  to database
-require_once('connect_mysql.php');
+require_once('config/config.php');
+// require_once('config/global_functions.php');
 
+set_session_variables(false);
 ?>
 
 
@@ -33,6 +35,7 @@ require_once('connect_mysql.php');
     </div>
 
     Vous avez bien été deconnecté.
+
 </body>
 
 <footer>

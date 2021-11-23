@@ -1,6 +1,6 @@
 <?php
 
-$domaine = "http://localhost";
+require_once("connect_mysql.php");
 
 $error = [
     "message" => "",

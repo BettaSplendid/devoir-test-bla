@@ -1,7 +1,7 @@
 <?php
 
 //Ensure connexion  to database
-require_once('connect_mysql.php');
+require_once('config/config.php');
 
 ?>
 
@@ -42,34 +42,10 @@ require_once('connect_mysql.php');
             echo "Welcome to the member's area, " . $_SESSION['pseudo'] . "!";
             //include 'blablabal.php';
         } else {
-            echo "Please log in first to see this page.";
+            include 'vues/connexion_form.html';
         }
         ?>
 
-        <form action="connexion_debug.php" method="post">
-            <div class="container_main">
-                <h1>Vos identifiants : </h1>
-                <hr>
-
-                <label for="email"><b>Mail :</b></label>
-                <input type="text" placeholder="Email *" name="email" id="email">
-                <br>
-
-                <label for="mdp"><b>Mot de Passe :</b></label>
-                <input type="password" placeholder="Mot de Passe *" name="mdp" id="mdp">
-                <br>
-
-                <br>
-                <div class="container signin">
-                    <p><a href="#">Mot de passe oublié?</a></p>
-                </div>
-                <hr>
-
-
-                <button type="submit" class="registerbtn">
-                    <h2>Se connecter</h2>
-                </button>
-            </div>
 
             <div class="container_signin">
                 <p><a href="enregistrement.php">Je n'ai pas de compte</a>.</p>

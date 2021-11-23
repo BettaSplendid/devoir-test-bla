@@ -1,7 +1,7 @@
 <?php
 
 //Ensure connexion  to database
-require_once('connect_mysql.php');
+require_once('config/config.php');
 
 ?>
 

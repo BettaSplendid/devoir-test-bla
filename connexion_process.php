@@ -1,7 +1,8 @@
 <?php
 
 //Ensure connexion  to database
-require_once('connect_mysql.php');
+require_once('config/config.php');
+// require_once('config/global_functions.php');
 
 //Creation des variables php pour traitment
 $mail = strip_tags($_POST['email']);
@@ -27,21 +28,25 @@ function search_db_for_account()
 {
     global $dtbs;
     global $mail;
+    global $array_to_pass;
 
     $search_request = 'SELECT * FROM `parrot_users` WHERE email = :email';
     $prepare__search = $dtbs->prepare($search_request);
     $prepare__search->execute(["email" => $mail]); // run the statement
-    $resultat_array = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative array
+    $resultat_recherche = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative recherche
 
-    var_dump($resultat_array);
+    var_dump($resultat_recherche);
 
-    if ($resultat_array) {
+    $array_to_pass = $resultat_recherche;
+
+    if ($resultat_recherche) {
         echo "We found your mail bb <br />";
-        return 1;
+        return $array_to_pass;
     } else {
         echo "Can't find a matching email <br />";
         return 0;
     }
+
     // Not supposed to happen but just in case
     echo "Error, test failed. <br />";
     return;
@@ -52,20 +57,24 @@ function compare_password()
 {
     global $dtbs;
     global $mdp;
+    global $array_to_process;
 
-    $search_request = 'SELECT * FROM `parrot_users` WHERE mdp = :mdp';
+    $id_to_search = $array_to_process[0]['id'];
+
+
+
+    $search_request = 'SELECT * FROM `parrot_users` WHERE id = :id';
     $prepare__search = $dtbs->prepare($search_request);
-    $prepare__search->execute(["mdp" => $mdp]); // run the statement
-    $resultat_array = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative array
+    $prepare__search->execute(["id" => $id_to_search]);
+    $resultat_recherche = $prepare__search->fetchAll(PDO::FETCH_ASSOC);
 
 
-    $placeholder_variable2 = $resultat_array[0]["mdp"];
-    var_dump($resultat_array);
+    $retrieved_mdp = $resultat_recherche[0]["mdp"];
+    var_dump($resultat_recherche);
+    var_dump($retrieved_mdp);
 
-    var_dump($placeholder_variable2);
-
-    if ($placeholder_variable2 == $mdp) {
-        echo "Ca marcheeee! Le mot de passe fourni $placeholder_variable2 est egal au mot de passe récupéré $mdp !";
+    if ($retrieved_mdp == $mdp) {
+        echo "Ca marcheeee! Le mot de passe fourni $retrieved_mdp est egal au mot de passe récupéré $mdp !";
         return 1;
     } else {
         echo "ca marche poooo";
@@ -74,25 +83,8 @@ function compare_password()
 }
 
 
-function connect_to_website()
-{
-    global $pseudo;
-
-    if (!search_db_for_account()) {
-        return;
-    }
-    if (!compare_password()) {
-        return;
-    }
-
-    set_session_variables(true);
-    echo "Successfully logged in";
-}
-
-
 //Cette fonction paremètre les variables de session.
 //Si $Cnnct = true, il nous defini en temps que connecté
-
 function set_session_variables($Cnnct)
 {
     global $pseudo;
@@ -107,5 +99,28 @@ function set_session_variables($Cnnct)
         $_SESSION['mail'] = null;
     }
 }
+
+
+
+function connect_to_website()
+{
+
+    global $zeee_idddd;
+    //On cherche un mail qui correspond
+    if (!search_db_for_account()) {
+        return;
+    }
+    //On regarde si le mot de passe fourni correspond avec celui de la bdd
+    if (!compare_password()) {
+        return;
+    }
+    //Tout va bien, on met les bonnes variables.
+    set_session_variables(true);
+    echo "Successfully logged in";
+}
+
+
+
+
 
 connect_to_website();
