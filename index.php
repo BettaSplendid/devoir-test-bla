@@ -78,7 +78,7 @@ require_once('connect_mysql.php');
 
         <a href="connexion.php">Connexion</a>
 
-        <a href="Deconnexion.php">Deconnexion</a>
+        <a href="deconnexion.php">Deconnexion</a>
 
         <a href="https://cultofthepartyparrot.com/">Secret!</a>
     </div>

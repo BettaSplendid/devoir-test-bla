@@ -47,7 +47,6 @@ function search_db_for_account()
     return;
 }
 
-//        $_SESSION['loggedin'] = true;
 
 function compare_password()
 {
@@ -77,7 +76,7 @@ function compare_password()
 
 function connect_to_website()
 {
-    global $error_stuff;
+    global $pseudo;
 
     if (!search_db_for_account()) {
         return;
@@ -86,9 +85,27 @@ function connect_to_website()
         return;
     }
 
-    $_SESSION['loggedin'] = true;
-    echo $_SESSION['loggedin'];
+    set_session_variables(true);
     echo "Successfully logged in";
+}
+
+
+//Cette fonction paremètre les variables de session.
+//Si $Cnnct = true, il nous defini en temps que connecté
+
+function set_session_variables($Cnnct)
+{
+    global $pseudo;
+    global $mail;
+    if ($Cnnct) {
+        $_SESSION['loggedin'] = true;
+        $_SESSION['pseudo'] = $pseudo;
+        $_SESSION['mail'] = $mail;
+    } else {
+        $_SESSION['loggedin'] = false;
+        $_SESSION['pseudo'] = null;
+        $_SESSION['mail'] = null;
+    }
 }
 
 connect_to_website();

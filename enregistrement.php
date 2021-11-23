@@ -75,7 +75,7 @@ require_once('connect_mysql.php');
         <a href="Articles.php">Articles</a> -
         <a href="connexion.php">Connexion</a> -
         <a href="enregistrement.php">Creation de Compte</a> -
-        <a href="Deconnexion.php">Deconnexion</a> -
+        <a href="deconnexion.php">Deconnexion</a> -
         <div>
             @Mr Con Ure.
         </div>

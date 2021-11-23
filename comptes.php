@@ -46,7 +46,7 @@ require_once('connect_mysql.php');
     </div>
     <div class="Deconnexion">
         <br> Deconnexion
-        <a href="Deconnexion.php">Deconnexion</a>
+        <a href="deconnexion.php">Deconnexion</a>
     </div>
 </body>
 
