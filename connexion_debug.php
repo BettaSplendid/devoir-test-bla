@@ -31,7 +31,7 @@ require_once('config/config.php');
             <a href="contact.php">Contact</a>
             <a href="comptes.php">Comptes</a>
             <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="https://cultofthepartyparrot.com/">Articles</a>
+            <a href="articles.php">Articles</a>
             <a class="active" href="index.php">Accueil</a>
         </div>
         <div class="output_container">

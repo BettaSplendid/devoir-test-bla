@@ -75,7 +75,9 @@ function compare_password($passed_array)
         return 0;
     }
 
-    if (empty($mdp)); {
+    var_dump($mdp);
+
+    if (empty($mdp)) {
         echo "No password was given by the user<br />";
         return 0;
     }
