@@ -3,20 +3,18 @@
 require_once('config/config.php');
 require_once('debug_helper.php');
 
-$_SESSION['yourCountersNameHere'] = 1;
+$_SESSION['debug_step_counter'] = 1;
 
 
 // Creation des variables php pour traitment
 
 
-debug_helper_counters(); // Debug test
+debug_helper_counters("Strip tags des variables recues"); // Debug test
 
 $mail = strip_tags($_POST['email']);
 $pseudo = strip_tags($_POST['pseudo']);
 $mdp = strip_tags($_POST['mdp']);
 $mdp_repeated = strip_tags($_POST['mdp-repeat']);
-
-debug_helper_counters(); // Debug test
 
 function normal_chars($string)
 {
@@ -28,15 +26,13 @@ function normal_chars($string)
     return trim($string, ' -');
 }
 
-debug_helper_counters(); // Debug test
-
+debug_helper_counters("normal chars des variables"); // Debug test
 
 $mail = normal_chars($mail);
 $pseudo = normal_chars($pseudo);
 $mdp = normal_chars($mdp);
 $mdp_repeated = normal_chars($mdp_repeated);
 
-debug_helper_counters(); // Debug test
 
 // Debug output to see the inputs avant utilisation
 echo  nl2br(" \n");
@@ -61,7 +57,7 @@ if ((!isset($mail)) || (!isset($pseudo)) || (!isset($mdp))  || (!isset($mdp_repe
     return $error;
 }
 
-debug_helper_counters(); //Debug test
+debug_helper_counters("Verification de presence mail"); //Debug test
 
 if (empty($mail) || empty($pseudo) || empty($mdp) || empty($mdp_repeated)) {
     echo "$mail vaut soit 0, vide, ou pas définie du tout";
@@ -71,7 +67,7 @@ if (empty($mail) || empty($pseudo) || empty($mdp) || empty($mdp_repeated)) {
     return $error;
 }
 
-debug_helper_counters(); // Debug test
+debug_helper_counters("Mail valid?"); // Debug test
 
 // Verifier validité du mail
 function mail_validity_ver()
@@ -88,22 +84,27 @@ function mail_validity_ver()
     }
 }
 
-debug_helper_counters(); //Debug test
 
 mail_validity_ver();
 
+debug_helper_counters("Verification similitude mdp"); //Debug test
+
+
 // Compare les MDP
-$var1 = $_POST['mdp'];
-$var2 = $_POST['mdp-repeat'];
-if (strcmp($var1, $var2) !== 0) {
-    echo "Vos mots de passe ne sont pas identiques. Veuillez les verifier.";
-    echo  nl2br(" \n");
-} else {
-    echo "Mdp identiques. Bien.";
-    echo  nl2br(" \n");
+function mdp_input_compare()
+{
+    global $mdp;
+    global $mdp_repeated;
+    if (strcmp($mdp, $mdp_repeated) !== 0) {
+        echo "Vos mots de passe ne sont pas identiques. Veuillez les verifier.";
+        echo  nl2br(" \n");
+    } else {
+        echo "Mdp identiques. Bien.";
+        echo  nl2br(" \n");
+    }
 }
 
-debug_helper_counters(); //Debug test
+mdp_input_compare();
 
 // VERIFIER SI IL N'y A PAS DEJA DES UTILISATEURS AVEC PSEUDO OU EMAIL
 
@@ -133,7 +134,6 @@ function ze_inserto()
 
 
 
-debug_helper_counters(); //Debug test
 
 function search_db_pseudo()
 {
@@ -198,6 +198,8 @@ function check_and_insert()
     }
 }
 
+debug_helper_counters("Verification duplicatas mail ou pseudo"); //Debug test
+
 check_and_insert();
 
-debug_helper_counters(); //Debug test
+debug_helper_counters("Fiiin"); //Debug test

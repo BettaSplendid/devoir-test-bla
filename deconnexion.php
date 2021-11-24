@@ -2,7 +2,7 @@
 
 //Ensure connexion  to database
 require_once('config/config.php');
-// require_once('config/global_functions.php');
+require_once('config/global_functions.php');
 
 set_session_variables(false);
 ?>

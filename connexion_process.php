@@ -2,7 +2,8 @@
 
 //Ensure connexion  to database
 require_once('config/config.php');
-// require_once('config/global_functions.php');
+require_once('debug_helper.php');
+require_once('config/global_functions.php');
 
 //Creation des variables php pour traitment
 $mail = strip_tags($_POST['email']);
@@ -30,16 +31,19 @@ function search_db_for_account()
     global $mail;
     global $array_to_pass;
 
+    echo " Search db for account ()<br />";
+
     $search_request = 'SELECT * FROM `parrot_users` WHERE email = :email';
     $prepare__search = $dtbs->prepare($search_request);
     $prepare__search->execute(["email" => $mail]); // run the statement
-    $resultat_recherche = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative recherche
+    $bdd_search_output = $prepare__search->fetchAll(PDO::FETCH_ASSOC); // fetch the rows and put into associative recherche
 
-    var_dump($resultat_recherche);
+    echo "resultat recherche <br />";
+    var_dump($bdd_search_output);
 
-    $array_to_pass = $resultat_recherche;
+    $array_to_pass = $bdd_search_output;
 
-    if ($resultat_recherche) {
+    if ($bdd_search_output) {
         echo "We found your mail bb <br />";
         return $array_to_pass;
     } else {
@@ -53,31 +57,66 @@ function search_db_for_account()
 }
 
 
-function compare_password()
+function compare_password($passed_array)
 {
     global $dtbs;
     global $mdp;
-    global $array_to_process;
 
-    $id_to_search = $array_to_process[0]['id'];
 
+    debug_helper_counters(" Function compare password");
+
+
+    if (!isset($passed_array)) {
+        echo "Password-id array wasn't properly handed <br />";
+        return 0;
+    }
+    if (empty($passed_array)) {
+        echo "Password-id  array is empty <br />";
+        return 0;
+    }
+
+    if (empty($mdp)); {
+        echo "No password was given by the user<br />";
+        return 0;
+    }
+
+    debug_helper_counters("zeee id"); // Debug test
+    var_dump($passed_array);
+
+
+    debug_helper_counters("ID to search"); // Debug test
+    $id_to_search = $passed_array[0]['id'];
+    var_dump($id_to_search);
 
 
     $search_request = 'SELECT * FROM `parrot_users` WHERE id = :id';
     $prepare__search = $dtbs->prepare($search_request);
     $prepare__search->execute(["id" => $id_to_search]);
-    $resultat_recherche = $prepare__search->fetchAll(PDO::FETCH_ASSOC);
+    $bdd_search_output = $prepare__search->fetchAll(PDO::FETCH_ASSOC);
 
 
-    $retrieved_mdp = $resultat_recherche[0]["mdp"];
-    var_dump($resultat_recherche);
+    debug_helper_counters("var dump resultat recherche dans bdd"); // Debug test
+    var_dump($bdd_search_output);
+
+
+    $retrieved_mdp = $bdd_search_output[0]["mdp"];
+
+
+    debug_helper_counters("var dump retrieved mdp"); // Debug test
     var_dump($retrieved_mdp);
 
+
+    debug_helper_counters("test de comparaison"); // Debug test
+    var_dump($retrieved_mdp);
+    echo "<br />";
+    var_dump($mdp);
+
+
     if ($retrieved_mdp == $mdp) {
-        echo "Ca marcheeee! Le mot de passe fourni $retrieved_mdp est egal au mot de passe récupéré $mdp !";
+        echo "Ca marcheeee! Le mot de passe fourni '$retrieved_mdp' est egal au mot de passe récupéré '$mdp' !<br />";
         return 1;
     } else {
-        echo "ca marche poooo";
+        echo "ca marche poooo. Les mots de passe fourni '$retrieved_mdp' n'est pas egal au mot de passe récupéré '$mdp'<br />";
         return 0;
     }
 }
@@ -105,18 +144,26 @@ function set_session_variables($Cnnct)
 function connect_to_website()
 {
 
-    global $zeee_idddd;
+    global $zeee_result;
     //On cherche un mail qui correspond
-    if (!search_db_for_account()) {
+
+    $zeee_result = search_db_for_account();
+
+    var_dump($zeee_result);
+
+    if (!$zeee_result) {
         return;
     }
+
+    var_dump($zeee_result);
+
     //On regarde si le mot de passe fourni correspond avec celui de la bdd
-    if (!compare_password()) {
+    if (!compare_password($zeee_result)) {
         return;
     }
     //Tout va bien, on met les bonnes variables.
     set_session_variables(true);
-    echo "Successfully logged in";
+    echo "Successfully logged in!";
 }
 
 

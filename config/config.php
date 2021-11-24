@@ -12,4 +12,4 @@ $_SESSION['id'] = null;
 $_SESSION['mail'] = null;
 $_SESSION['pseudo'] = null;
 $_SESSION['logged_in'] = null;
-$_SESSION['yourCountersNameHere'] = 0;
+$_SESSION['debug_step_counter'] = 0;
