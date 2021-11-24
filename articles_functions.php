@@ -6,11 +6,9 @@ require_once('debug_helper.php');
 
 // Connexion table tables BDD - fait
 
-// Attraper ID de utilisateur connecté
+// Attraper ID de utilisateur connecté - fait
 
 // verification droit de voir les articles gros????
-
-// On suppose deja connecté et tout. Ou on appelle la fonction de connexion
 
 // Fonction attraper articles / titre + id
 
@@ -22,9 +20,14 @@ require_once('debug_helper.php');
 
 
 
-check_articles_table();
 
-check_user_access_all_articles();
+
+
+// perms articles
+// 0 : personne sauf admin
+// 1 : Juste auteur et admin
+// 2 : contacts de l'auteur & admin
+
 
 
 function check_articles_table()
@@ -41,7 +44,7 @@ function check_articles_table()
     }
 }
 
-function check_user_access_all_articles()
+function check_user_access_articles()
 {
     global $c_user_id;
     global $dtbs;
@@ -58,13 +61,30 @@ function check_user_access_all_articles()
     debug_helper_counters("bdd search output : ");
     var_dump($bdd_search_output);
 
-    $users_articles_permissions = $bdd_search_output[0]['authorisations'];
+    $users_articles_perms = $bdd_search_output[0]['authorisations'];
 
-    debug_helper_counters("user permissions : $users_articles_permissions");
+    debug_helper_counters("user perms : $users_articles_perms");
 }
 
+function addarticles()
+{
+    global $user_id;
+    global $the_title;
+    global $the_text;
+    global $the_author;
+    global $the_perms;
+    global $dtbs;
 
-// Permissions articles
-// 0 : personne sauf admin
-// 1 : Juste auteur et admin
-// 2 : contacts de l'auteur & admin
+    $user_id = $_SESSION['id'];
+
+    $setup_request = 'INSERT INTO parrot_articles(titre, contenu, auteur, perms) VALUES (:titre, :contenu, :auteur, :perms)';
+
+    $publish_request = $dtbs->prepare($setup_request);
+
+    $publish_request->execute([
+        'titre' => $the_title,
+        'contenu' => $the_text,
+        'auteur' => $the_author,
+        'perms' => $the_perms,
+    ]);
+}

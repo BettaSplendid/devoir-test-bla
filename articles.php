@@ -19,7 +19,17 @@ require_once('config/config.php');
 
     <link rel="shortcut icon" href="659d15e99fed5c1fdb7923de68673c79.png" type="image/x-icon">
     <link rel="stylesheet" href="mystyle.css">
-
+    <script src="https://cdn.tiny.cloud/1/67l8eg596qjlctom7d5l1fwf5b41hsp50qi8p1fru6fts7nz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+    </script>
 
 </head>
 
@@ -40,12 +50,7 @@ require_once('config/config.php');
     <div>
         Ajouter des articles.
         <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "Welcome to the member's area, " . $_SESSION['pseudo'] . "! <br />";
-            include 'articles_manager.php';
-        } else {
-            echo "Please log in first to see this page.";
-        }
+        include 'articles_manipulator.php';
 
         ?>
 
