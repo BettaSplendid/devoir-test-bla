@@ -1,4 +1,3 @@
-
 <?php
 
 //Ensure connexion  to database

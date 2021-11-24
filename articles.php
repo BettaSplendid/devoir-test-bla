@@ -38,12 +38,11 @@ require_once('config/config.php');
         Alors voila.
     </div>
     <div>
-            Ajouter des articles.
+        Ajouter des articles.
         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "Welcome to the member's area, " . $_SESSION['pseudo'] . "!";
-            var_dump($_SESSION['pseudo']);
-            //include 'blablabal.php';
+            echo "Welcome to the member's area, " . $_SESSION['pseudo'] . "! <br />";
+            include 'articles_manager.php';
         } else {
             echo "Please log in first to see this page.";
         }

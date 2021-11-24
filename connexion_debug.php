@@ -37,8 +37,9 @@ require_once('config/config.php');
         <div class="output_container">
 
             <?php
-            $_POST["email"] = $_POST["email"];
-            $_POST["mdp"] = $_POST["mdp"];
+            // Semble que ca n'est pas necessaire.
+            // $_POST["email"] = $_POST["email"];
+            // $_POST["mdp"] = $_POST["mdp"];
             include 'connexion_process.php';
             ?>
         </div>

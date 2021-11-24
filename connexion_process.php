@@ -3,12 +3,10 @@
 //Ensure connexion  to database
 require_once('config/config.php');
 require_once('debug_helper.php');
-require_once('config/global_functions.php');
 
 //Creation des variables php pour traitment
 $mail = strip_tags($_POST['email']);
 $mdp = strip_tags($_POST['mdp']);
-
 
 function normal_chars($string)
 {
@@ -124,24 +122,6 @@ function compare_password($passed_array)
 }
 
 
-//Cette fonction paremètre les variables de session.
-//Si $Cnnct = true, il nous defini en temps que connecté
-function set_session_variables($Cnnct)
-{
-    global $pseudo;
-    global $mail;
-    if ($Cnnct) {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['pseudo'] = $pseudo;
-        $_SESSION['mail'] = $mail;
-    } else {
-        $_SESSION['loggedin'] = false;
-        $_SESSION['pseudo'] = null;
-        $_SESSION['mail'] = null;
-    }
-}
-
-
 
 function connect_to_website()
 {
@@ -164,12 +144,29 @@ function connect_to_website()
         return;
     }
     //Tout va bien, on met les bonnes variables.
-    set_session_variables(true);
+
+    debug_helper_counters("Output session"); // Debug test
+
+    pass_session_variables($zeee_result);
+
+    debug_helper_counters("Congrats"); // Debug test
+
     echo "Successfully logged in!";
 }
 
+function pass_session_variables($received_array) {
 
+    
+    global $session_mail;
+    global $session_pseudo;
+    global $session_id;
 
+    $session_id = $received_array[0]['id'];
+    $session_pseudo = $received_array[0]['pseudo'];
+    $session_mail = $received_array[0]['email'];
 
+    set_session_variables(true);
+
+}
 
 connect_to_website();
