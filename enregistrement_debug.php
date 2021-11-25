@@ -26,7 +26,7 @@ require_once('config/config.php');
 
 </head>
 
-<body class="index_background">
+<body>
     <div class="header_bar">
         <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
     </div>
@@ -54,7 +54,7 @@ require_once('config/config.php');
 <footer>
     <div class="the_footerman">
         Plus de liens :
-        <a href="Articles.php">Articles</a>
+        <a href="articles.php">Articles</a>
 
         <a href="enregistrement.php">Enregistrement</a>
 

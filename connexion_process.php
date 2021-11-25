@@ -154,9 +154,10 @@ function connect_to_website()
     echo "Successfully logged in!";
 }
 
-function pass_session_variables($received_array) {
+function pass_session_variables($received_array)
+{
 
-    
+
     global $session_mail;
     global $session_pseudo;
     global $session_id;
@@ -166,7 +167,6 @@ function pass_session_variables($received_array) {
     $session_mail = $received_array[0]['email'];
 
     set_session_variables(true);
-
 }
 
 connect_to_website();

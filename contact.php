@@ -65,7 +65,7 @@ require_once('config/config.php');
 <footer>
     <div class="the_footerman">
         Plus de liens :
-        <a href="Articles.php">Articles</a>
+        <a href="articles.php">Articles</a>
 
         <a href="enregistrement.php">Enregistrement</a>
 

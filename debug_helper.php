@@ -21,7 +21,7 @@ function debug_helper_counters($message)
 
     $debug_count = $data__passer + 1;
     $message = ucfirst($message);
-    
+
     echo  nl2br(" \n");
     echo "--------------------------------------- <br />";
     echo "  Debug step number: $data__passer <br />";

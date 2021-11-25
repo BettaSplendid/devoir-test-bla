@@ -24,7 +24,7 @@ set_session_variables(false);
 
 </head>
 
-<body class="index_background">
+<body>
     <div class="header_bar">
         <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
     </div>
@@ -43,7 +43,7 @@ set_session_variables(false);
 <footer>
     <div class="the_footerman">
         Plus de liens :
-        <a href="Articles.php">Articles</a>
+        <a href="articles.php">Articles</a>
 
         <a href="enregistrement.php">Enregistrement</a>
 

@@ -105,7 +105,7 @@ function addarticles($le_user_id, $le_title, $le_content)
         'auteur' => $the_author,
         'perms' => $the_perms
     ]);
-    
+
     echo "Inserted the article!";
 
     echo $the_text;

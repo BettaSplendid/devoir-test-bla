@@ -24,8 +24,8 @@ require_once('config/config.php');
 
 </head>
 
-<body class="index_background">
-    <div class="index_background">
+<body>
+    <div>
         <div class="header_bar">
             <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
         </div>

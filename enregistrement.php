@@ -23,8 +23,8 @@ require_once('config/config.php');
 
 </head>
 
-<body class="the_container">
-    <div class="index_background">
+<body>
+    <div>
         <div class="header_bar">
             <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
         </div>
@@ -38,7 +38,7 @@ require_once('config/config.php');
 
         <div class="register_form_background_pic">
             <form action="enregistrement_debug.php" method="POST">
-                <div class="the_container">
+                <div>
                     <h1>Créer un compte!</h1>
                     <p>Indiquez vos informations.</p>
                     <hr>
@@ -78,7 +78,7 @@ require_once('config/config.php');
 <footer>
     <div class="the_footerman">
         Plus de liens :
-        <a href="Articles.php">Articles</a>
+        <a href="articles.php">Articles</a>
 
         <a href="enregistrement.php">Enregistrement</a>
 
