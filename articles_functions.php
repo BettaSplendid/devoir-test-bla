@@ -121,8 +121,6 @@ check_articles_table();
 
 check_user_access_articles();
 
-prepare_add_article();
-
 function prepare_add_article()
 {
     $le_user_id = $_SESSION['id'];

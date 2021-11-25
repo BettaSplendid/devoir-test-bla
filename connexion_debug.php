@@ -26,7 +26,9 @@ require_once('config/config.php');
 
 <body class="index_background">
     <div class="index_background">
-
+        <div class="header_bar">
+            <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
+        </div>
         <div class="bar_bar">
             <a href="contact.php">Contact</a>
             <a href="comptes.php">Comptes</a>

@@ -12,7 +12,8 @@ require_once('config/config.php');
 <head>
     <meta charset="utf-8" />
     <title>Le blogroquet - Enregistrement</title>
-    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire."></meta>
+    <meta name="description" content="Ce site ne sert pas à grand chose. C'est une #perte de te mps. Franchement, vous avez mieux à faire.">
+    </meta>
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
@@ -23,6 +24,9 @@ require_once('config/config.php');
 
 <body class="background_contact">
     <div class="background_contact_picture">
+        <div class="header_bar">
+            <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
+        </div>
         <div class="bar_bar">
             <a href="contact.php">Contact</a>
             <a href="comptes.php">Comptes</a>
@@ -47,8 +51,6 @@ require_once('config/config.php');
                     <label for="Sujet">Sujet :</label>
                     <input class="form_stuff_pseudo" type="text" id="Sujet" name="Sujet" placeholder="Sujet de votre requête">
 
-                    <!-- <label for="captcha">Combien font <?php echo captcha(); ?></label> -->
-
                     <label for="message">Votre message :</label>
                     <textarea class="form_stuff_pseudo" id="message" name="message" style="height:200px"></textarea>
 
@@ -58,3 +60,22 @@ require_once('config/config.php');
             </div>
         </div>
     </div>
+
+</body>
+<footer>
+    <div class="the_footerman">
+        Plus de liens :
+        <a href="Articles.php">Articles</a>
+
+        <a href="enregistrement.php">Enregistrement</a>
+
+        <a href="connexion.php">Connexion</a>
+
+        <a href="deconnexion.php">Deconnexion</a>
+
+        <a href="https://cultofthepartyparrot.com/">Secret!</a>
+    </div>
+    <div class="the_foot_of_the_footerman">
+        @Mr Con Ure.
+    </div>
+</footer>

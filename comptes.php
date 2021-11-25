@@ -24,6 +24,9 @@ require_once('config/config.php');
 </head>
 
 <body class="index_background">
+    <div class="header_bar">
+        <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
+    </div>
     <div class="bar_bar">
         <a href="contact.php">Contact</a>
         <a href="comptes.php">Comptes</a>
@@ -48,9 +51,24 @@ require_once('config/config.php');
         <br> Deconnexion
         <a href="deconnexion.php">Deconnexion</a>
     </div>
+
+
 </body>
 
 <footer>
-    <p><em> <small>@Mr Con Ure.</small></em></p>
+    <div class="the_footerman">
+        Plus de liens :
+        <a href="Articles.php">Articles</a>
 
+        <a href="enregistrement.php">Enregistrement</a>
+
+        <a href="connexion.php">Connexion</a>
+
+        <a href="deconnexion.php">Deconnexion</a>
+
+        <a href="https://cultofthepartyparrot.com/">Secret!</a>
+    </div>
+    <div class="the_foot_of_the_footerman">
+        @Mr Con Ure.
+    </div>
 </footer>

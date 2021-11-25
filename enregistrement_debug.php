@@ -27,24 +27,44 @@ require_once('config/config.php');
 </head>
 
 <body class="index_background">
-    <div class="index_background">
+    <div class="header_bar">
+        <img class="header_logo" src='659d15e99fed5c1fdb7923de68673c79.png'>
+    </div>
 
-        <div class="bar_bar">
-            <a href="contact.php">Contact</a>
-            <a href="comptes.php">Comptes</a>
-            <a href="https://cultofthepartyparrot.com/">News</a>
-            <a href="articles.php">Articles</a>
-            <a class="active" href="index.php">Accueil</a>
-        </div>
-        <div class="output_container">
+    <div class="bar_bar">
+        <a href="contact.php">Contact</a>
+        <a href="comptes.php">Comptes</a>
+        <a href="https://cultofthepartyparrot.com/">News</a>
+        <a href="articles.php">Articles</a>
+        <a class="active" href="index.php">Accueil</a>
+    </div>
+    <div class="output_container">
 
-            <?php
-            $_POST["email"] = $_POST["email"];
-            $_POST["pseudo"] = $_POST["pseudo"];
-            $_POST["mdp"] = $_POST["mdp"];
-            $_POST["mdp-repeat"] = $_POST["mdp-repeat"];
-            include 'enregistrement_process.php';
-            ?>
-        </div>
+        <?php
+        $_POST["email"] = $_POST["email"];
+        $_POST["pseudo"] = $_POST["pseudo"];
+        $_POST["mdp"] = $_POST["mdp"];
+        $_POST["mdp-repeat"] = $_POST["mdp-repeat"];
+        include 'enregistrement_process.php';
+        ?>
     </div>
 </body>
+
+
+<footer>
+    <div class="the_footerman">
+        Plus de liens :
+        <a href="Articles.php">Articles</a>
+
+        <a href="enregistrement.php">Enregistrement</a>
+
+        <a href="connexion.php">Connexion</a>
+
+        <a href="deconnexion.php">Deconnexion</a>
+
+        <a href="https://cultofthepartyparrot.com/">Secret!</a>
+    </div>
+    <div class="the_foot_of_the_footerman">
+        @Mr Con Ure.
+    </div>
+</footer>

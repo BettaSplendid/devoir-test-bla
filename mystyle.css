@@ -1,49 +1,72 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 152, 134);
+}
+
 .the_container {
     width: 100%;
     height: 100%;
     margin: 0;
     bottom: 0;
+    position: relative;
 }
 
-.index_background {
+
+/*.index_background {
     background-color: rgb(255, 152, 134);
     padding: 20px;
-    /* width: 100%; */
     height: 100%;
     display: block;
     bottom: 0;
     margin: 0;
+}*/
+
+footer {
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #0D2C3B;
+    color: white;
+    text-align: center;
+    /* position: absolute; */
 }
 
 #articles_insert_form {
     padding: 20px;
 }
 
-.the_footerman {
-    width: 100%;
-    background-color: #0D2C3B;
-    height: 50px;
-    color: white;
-    text-align: center;
-    padding: 30px;
+.superheader {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(233, 128, 128, 0.31);
+    border-radius: 10px 10px 0px 0px;
+    background-color: #04AA6D;
+    height: 55px;
+    width: auto;
+    margin-left: 10px;
 }
 
-.the_foot_of_the_footerman {
-    width: 100%;
-    margin: 0;
-    height: 50px;
-    background-color: #092330;
-    color: white;
-    padding: 30px;
-    text-align: center;
+.header_bar {
+    background-color: #994f4f;
+    height: 55px;
+    margin-left: 10px;
+}
+
+.header_logo {
+    height: 115px;
+    width: auto;
 }
 
 .bar_bar {
     background-color: rgb(211, 130, 116);
-    overflow: hidden;
     height: 60px;
-    margin-left: -7.5px;
-    margin-right: -7.5px;
+    margin-left: 10px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .bar_bar a {
@@ -173,4 +196,31 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+.main_content_wrapper {
+    background-color: purple;
+    position: relative;
+    max-width: 1450px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: auto;
+}
+
+.main_content_side_right {
+    float: right;
+    border-top-width: 50px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.main_content_side_right_box {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(233, 128, 128, 0.31);
+    border-radius: 10px 10px 0px 0px;
 }
