@@ -104,9 +104,9 @@ footer {
 }
 
 .fit_picture_index {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
 }
 
 .fit_picture_legend_index {
@@ -246,20 +246,32 @@ footer {
 }
 
 .main_content_side_right_box {
-    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rectangle_page_category {
+    display: flex;
+    flex-direction: column;
+    background-color: gold;
+    padding: 20px;
+    margin-bottom: 3%;
+    border-width: 5px;
     border-style: solid;
-    background-color: magenta;
-    border-color: rgba(233, 128, 128, 0.31);
-    border-radius: 10px 10px 0px 0px;
+    border-color: rgba(255, 1, 1, 0.31);
+    border-radius: 10px;
 }
 
 .rectangle_article_container {
     min-height: 200px;
     background-color: blue;
+    padding: 20px;
     border-width: 5px;
     border-style: solid;
     border-color: rgba(255, 1, 1, 0.31);
     border-radius: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .actual_article_output_box {
@@ -273,25 +285,42 @@ footer {
     border-color: yellow;
 }
 
-.very_real_article_titre {
-    float: right;
-    margin-top: auto;
-    background-color: yellow;
-    width: 750px;
+.very_real_article_author {
+    display: flex;
+    flex-direction: column;
+    background-color: darkorchid;
+    padding-left: 5%;
+    padding-right: 1%;
     border-width: 5px;
     border-radius: 15px;
     border-style: solid;
-    border-color: yellow;
+    border-color: darkorchid;
+    width: fit-content;
+}
+
+.very_real_article_titre {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 0, 234);
+    border-width: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(255, 0, 234);
+    padding-left: 5%;
+    margin-top: 10px;
 }
 
 .very_real_article_sommaire {
-    background-color: green;
-    float: right;
-    width: 750px;
+    display: flex;
+    flex-direction: column;
+    background-color: #41cc81;
     border-width: 5px;
     border-radius: 15px;
     border-style: solid;
-    border-color: green;
+    border-color: #41cc81;
+    padding-left: 5%;
+    margin-top: 2px;
+    margin-left: 20px;
 }
 
 .square {
@@ -300,4 +329,5 @@ footer {
     width: 200px;
     background-color: rgb(255, 0, 0);
     border-radius: 10px;
+    margin-right: 15px;
 }

@@ -18,13 +18,13 @@ require_once('config/config.php');
 
     <link rel="shortcut icon" href="sharpparrot.png" type="image/x-icon">
     <link rel="stylesheet" href="mystyle.css">
-
+<!-- 
     <script src="https://cdn.tiny.cloud/1/67l8eg596qjlctom7d5l1fwf5b41hsp50qi8p1fru6fts7nz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#mytextarea',
         });
-    </script>
+    </script> -->
 
 </head>
 
@@ -42,8 +42,8 @@ require_once('config/config.php');
             <a class="active" href="index.php">Accueil</a>
         </div>
 
-        <div class="parrot_background">
-            <img class="fit_picture_index" src="exotic parrot cropped.png" width=30%>
+        <div class="fit_picture_index">
+            <img src="exotic parrot cropped.png">
         </div>
 
 
@@ -51,7 +51,8 @@ require_once('config/config.php');
             <div class="main_content_wrapper">
                 <div class="main_content_side_right">
                     <articles class="main_content_side_right_box">
-                    
+                        Bonjour
+                        <div class="rectangle_page_category">Lapin</div>
                         <?php
                         include 'articles_display.php';
                         ?>
