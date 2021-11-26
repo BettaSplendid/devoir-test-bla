@@ -202,30 +202,13 @@ footer {
 .main_content_wrapper {
     background-color: purple;
     position: relative;
-    max-width: 1450px;
+    max-width: 1500px;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
     width: auto;
-}
-
-.main_content_side_right {
-    float: right;
-    background-color: lavender;
-    border-top-width: 50px;
-    border-style: solid;
-    border-color: red;
-    border-radius: 10px 10px 0px 0px;
-    max-width: 65%;
-}
-
-.main_content_side_right_box {
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(233, 128, 128, 0.31);
-    border-radius: 10px 10px 0px 0px;
 }
 
 .main_content_side_left {
@@ -236,11 +219,85 @@ footer {
     border-color: green;
     border-radius: 10px 10px 0px 0px;
     max-width: 25%;
+    max-height: 20%;
+    min-width: 25%;
+    padding: 20px;
 }
 
 .main_content_side_left_box {
     border-width: 1px;
     border-style: solid;
+    background-color: brown;
     border-color: rgba(233, 128, 128, 0.31);
     border-radius: 10px 10px 0px 0px;
+}
+
+.main_content_side_right {
+    float: right;
+    background-color: lavender;
+    border-top-width: 50px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 10px 10px 0px 0px;
+    max-width: 65%;
+    max-height: 20%;
+    min-width: 65%;
+    padding: 20px;
+}
+
+.main_content_side_right_box {
+    border-width: 1px;
+    border-style: solid;
+    background-color: magenta;
+    border-color: rgba(233, 128, 128, 0.31);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.rectangle_article_container {
+    min-height: 200px;
+    background-color: blue;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(255, 1, 1, 0.31);
+    border-radius: 10px;
+}
+
+.actual_article_output_box {
+    float: right;
+    margin-top: auto;
+    background-color: yellow;
+    width: 750px;
+    border-width: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: yellow;
+}
+
+.very_real_article_titre {
+    float: right;
+    margin-top: auto;
+    background-color: yellow;
+    width: 750px;
+    border-width: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: yellow;
+}
+
+.very_real_article_sommaire {
+    background-color: green;
+    float: right;
+    width: 750px;
+    border-width: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: green;
+}
+
+.square {
+    float: left;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
 }
