@@ -24,35 +24,39 @@ require_once('config/config.php');
 </head>
 
 <body>
-    <div class="header_bar">
-        <img class="header_logo" src='sharpparrot.png'>
+    <div class="super_container">
+        <div class="superheader"></div>
+        <div class="header_bar">
+            <img class="header_logo" src='sharpparrot.png'>
+        </div>
+        <div class="bar_bar">
+            <a href="contact.php">Contact</a>
+            <a href="comptes.php">Comptes</a>
+            <a href="https://cultofthepartyparrot.com/">News</a>
+            <a href="articles.php">Articles</a>
+            <a class="active" href="index.php">Accueil</a>
+        </div>
+
+        <!-- La page en elle même -->
+
+        <div class="container_main">
+            <div class="Connexion_compte">
+                <br>Vous avez un compte? Cliquer ici:
+                <a href="connexion.php">blablablaba</a>
+            </div>
+
+            <div class="enregistrement_compte">
+                <br> Vous voulez vous inscrire? Cliquez ici!
+                <a href="enregistrement.php">Enregistrement</a>
+
+            </div>
+            <div class="Deconnexion">
+                <br> Deconnexion
+                <a href="deconnexion.php">Deconnexion</a>
+            </div>
+        </div>
+
     </div>
-    <div class="bar_bar">
-        <a href="contact.php">Contact</a>
-        <a href="comptes.php">Comptes</a>
-        <a href="https://cultofthepartyparrot.com/">News</a>
-        <a href="articles.php">Articles</a>
-        <a class="active" href="index.php">Accueil</a>
-    </div>
-
-    La page avec les comptes.
-
-    <div class="Connexion_compte">
-        <br>Vous avez un compte? Cliquer ici:
-        <a href="connexion.php">blablablaba</a>
-    </div>
-
-    <div class="enregistrement_compte">
-        <br> Vous voulez vous inscrire? Cliquez ici!
-        <a href="enregistrement.php">Enregistrement</a>
-
-    </div>
-    <div class="Deconnexion">
-        <br> Deconnexion
-        <a href="deconnexion.php">Deconnexion</a>
-    </div>
-
-
 </body>
 
 <footer>

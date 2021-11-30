@@ -24,6 +24,7 @@ require_once('config/config.php');
 
 <body class="background_contact">
     <div class="background_contact_picture">
+        <div class="superheader"></div>
         <div class="header_bar">
             <img class="header_logo" src='sharpparrot.png'>
         </div>

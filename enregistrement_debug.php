@@ -27,10 +27,10 @@ require_once('config/config.php');
 </head>
 
 <body>
+    <div class="superheader"></div>
     <div class="header_bar">
         <img class="header_logo" src='sharpparrot.png'>
     </div>
-
     <div class="bar_bar">
         <a href="contact.php">Contact</a>
         <a href="comptes.php">Comptes</a>
