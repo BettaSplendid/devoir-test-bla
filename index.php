@@ -16,7 +16,7 @@ var_dump($_SESSION['loggedin'])
     <meta property="og:image" content="https://thumbs.dreamstime.com/z/parrot-sits-branch-bright-silhouette-drawn-various-lines-style-minimalism-tattoo-bird-logo-parrot-sits-174762319.jpg">
     <meta property="og:title" content="Parrot Homework Network">
 
-    <link rel="shortcut icon" href="sharpparrot.png" type="image/x-icon">
+    <link rel="icon" href="sharpparrot.png" type="image/x-icon">
     <link rel="stylesheet" href="mystyle.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
